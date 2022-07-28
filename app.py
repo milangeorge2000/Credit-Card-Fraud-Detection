@@ -8,6 +8,7 @@ import pickle
 import shutil
 import pandas
 import pandas as pd
+from flask_cors import CORS
 
 
 
@@ -16,6 +17,7 @@ model = pickle.load(open('rf.pkl','rb'))
 
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route('/', methods=['GET'])
@@ -108,7 +110,7 @@ def credit_predict():
 
 
 
-@app.route('credit-card-fd.herokuapp.com/credit_uploader', methods = ['GET', 'POST'])
+@app.route('/credit_uploader', methods = ['GET', 'POST'])
 def credit_upload_file():
    if request.method == 'POST':
       f = request.files['file']
