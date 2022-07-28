@@ -145,7 +145,10 @@ def credit_upload_file():
      
       source = r"credit_result.csv"
       
-      shutil.move(source,destination)
+      try:
+        shutil.move(source,destination)
+      except:
+        print("Already Exists")
       # return 'file uploaded successfully'
       return render_template('credit_csv_download.html')
 
