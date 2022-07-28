@@ -42,13 +42,6 @@ def credit():
 def credit_csv():
   return render_template('credit_csv.html')
 
-@app.route('/cred',methods=['GET'])
-def cd():
-    return "hy"
-
-
-
-
 
 @app.route('/credit_predict',methods=['GET','POST'])
 def credit_predict():
@@ -145,16 +138,22 @@ def credit_upload_file():
      
       source = r"credit_result.csv"
       
+      path = r"static\client\csv\credit_result.csv"
+   
+      
       try:
-        shutil.move(source,destination)
+	      shutil.move(source,destination)
       except:
-        print("Already Exists")
+             print("file exists")
+	      
       # return 'file uploaded successfully'
       return render_template('credit_csv_download.html')
 
 @app.route('/credit_csv_result')
 def credit_csv_result():
-    safe_path = safe_join(app.config["CLIENT_CSV"], 'credit_result.csv')
+    simp_path = 'static/client/csv/'
+    abs_path = os.path.abspath(simp_path)
+    safe_path = safe_join(abs_path, 'credit_result.csv')
 
     
     return send_file(safe_path, as_attachment=True)
