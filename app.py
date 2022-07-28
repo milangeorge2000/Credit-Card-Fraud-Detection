@@ -42,6 +42,10 @@ def credit():
 def credit_csv():
   return render_template('credit_csv.html')
 
+@app.route('/cred',methods=['GET'])
+def cd():
+    return "hy"
+
 
 
 
