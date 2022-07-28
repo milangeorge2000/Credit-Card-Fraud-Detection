@@ -108,7 +108,7 @@ def credit_predict():
 
 
 
-@app.route('/credit_uploader', methods = ['GET', 'POST'])
+@app.route('credit-card-fd.herokuapp.com/credit_uploader', methods = ['GET', 'POST'])
 def credit_upload_file():
    if request.method == 'POST':
       f = request.files['file']
