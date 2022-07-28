@@ -112,36 +112,36 @@ def credit_predict():
 
 @app.route('/credit_uploader', methods = ['GET', 'POST'])
 def credit_upload_file():
-#    if request.method == 'POST':
-#       f = request.files['file']
-#       data = pd.read_csv(f)
-#       prediction = model.predict(data.values) 
-#       print(prediction)   
-#       final = pd.DataFrame({'Output':prediction})
+   if request.method == 'POST':
+      f = request.files['file']
+      data = pd.read_csv(f)
+      prediction = model.predict(data.values) 
+      print(prediction)   
+      final = pd.DataFrame({'Output':prediction})
    
 
-#       path = r"static\client\csv\credit_result.csv"
+      path = r"static\client\csv\credit_result.csv"
    
-#       try:
-#         os.remove(path)
+      try:
+        os.remove(path)
        
 
-#       except:
-#           print('No such file')
+      except:
+          print('No such file')
       
-#       simp_path = 'static/client/csv/'
-#       abs_path = os.path.abspath(simp_path)
+      simp_path = 'static/client/csv/'
+      abs_path = os.path.abspath(simp_path)
 
 
 
-#       app.config["CLIENT_CSV"] = abs_path
-#       # app.config["CLIENT_CSV"] = r"static\client\csv"
-#       final.to_csv('credit_result.csv')
-#       destination = abs_path
+      app.config["CLIENT_CSV"] = abs_path
+      # app.config["CLIENT_CSV"] = r"static\client\csv"
+      final.to_csv('credit_result.csv')
+      destination = abs_path
      
-#       source = r"credit_result.csv"
+      source = r"credit_result.csv"
       
-#       shutil.move(source,destination)
+      shutil.move(source,destination)
       # return 'file uploaded successfully'
       return render_template('credit_csv_download.html')
 
