@@ -109,12 +109,10 @@ def credit_predict():
 
 
 @app.route('/credit_uploader', methods = ['GET', 'POST'])
-def thyroid_upload_file():
+def credit_upload_file():
    if request.method == 'POST':
       f = request.files['file']
       data = pd.read_csv(f)
-      # data['age'] = data['age'].apply(lambda x : x//365)
-      # print(data.values) 
       prediction = model.predict(data.values) 
       print(prediction)   
       final = pd.DataFrame({'Output':prediction})
@@ -169,4 +167,4 @@ def credit_csv_result():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
