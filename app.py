@@ -117,22 +117,7 @@ def credit_upload_file():
       final = pd.DataFrame({'Output':prediction})
    
 
-      path = r"static\client\csv\credit_result.csv"
-   
-      try:
-        os.remove(path)
-       
-
-      except:
-          print('No such file')
-      
-      simp_path = 'static/client/csv/'
-      abs_path = os.path.abspath(simp_path)
-
-
-
-      app.config["CLIENT_CSV"] = abs_path
-      # app.config["CLIENT_CSV"] = r"static\client\csv"
+     
       final.to_csv('credit_result.csv')
      
      
