@@ -134,29 +134,19 @@ def credit_upload_file():
       app.config["CLIENT_CSV"] = abs_path
       # app.config["CLIENT_CSV"] = r"static\client\csv"
       final.to_csv('credit_result.csv')
-      destination = abs_path
      
-      source = r"credit_result.csv"
+     
       
-      path = r"static\client\csv\credit_result.csv"
-   
-      
-      try:
-	      shutil.move(source,destination)
-      except:
-             print("file exists")
 	      
       # return 'file uploaded successfully'
       return render_template('credit_csv_download.html')
 
 @app.route('/credit_csv_result')
 def credit_csv_result():
-    simp_path = 'static/client/csv/'
-    abs_path = os.path.abspath(simp_path)
-    safe_path = safe_join(abs_path, 'credit_result.csv')
+   
 
     
-    return send_file(safe_path, as_attachment=True)
+    return send_file('credit_result.csv', as_attachment=True)
 
 
 
