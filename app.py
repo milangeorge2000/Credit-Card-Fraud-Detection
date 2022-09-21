@@ -113,8 +113,14 @@ def credit_upload_file():
       f = request.files['file']
       data = pd.read_csv(f)
       prediction = model.predict(data.values) 
-      print(prediction)   
-      final = pd.DataFrame({'Output':prediction})
+      print(prediction)  
+      output = []
+      for i in prediction:
+	if(i == 0):
+		output.append("Normal")
+	else:
+		output.append("Fraud")
+      final = pd.DataFrame({'Output':output})
    
 
      
