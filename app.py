@@ -99,6 +99,7 @@ def credit_upload_file():
    if request.method == 'POST':
       f = request.files['file']
       data = pd.read_csv(f)
+      data = data[['V3','V4','V9','V10','V11','V12','V14','V16','V17','V18']]
       prediction = model.predict(data.values) 
       print(prediction)
       output = []
