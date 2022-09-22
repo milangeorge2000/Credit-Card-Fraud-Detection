@@ -12,7 +12,7 @@ from flask_cors import CORS
 
 
 
-model = pickle.load(open('rf5.pkl','rb'))
+model = pickle.load(open('rf.pkl','rb'))
 
 
 
