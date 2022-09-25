@@ -48,20 +48,22 @@ def credit_predict():
     array = list()
    
    
-    v3 = float(request.form['v3']) 
-    v4 = float(request.form['v4'])  
+    v3 = float(request.form['V3']) 
+    v4 = float(request.form['V4'])  
   
-    v9 = float(request.form['v9'])
-    v10 = float(request.form['v10'])
-    v11 =float(request.form['v11'])
-    v12 = float(request.form['v12'])
+    v9 = float(request.form['V9'])
+    v10 = float(request.form['V10'])
+    v11 =float(request.form['V11'])
+    v12 = float(request.form['V12'])
    
-    v14 = float(request.form['v14'])
+    v14 = float(request.form['V14'])
   
-    v16 = float(request.form['v16'])
-    v17= float(request.form['v17'])
-    v18 = float(request.form['v18'])
+    v16 = float(request.form['V16'])
+    v17= float(request.form['V17'])
+    v18 = float(request.form['V18'])
    
+    
+
     
 
 
