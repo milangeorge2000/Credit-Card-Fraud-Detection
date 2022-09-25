@@ -1,14 +1,14 @@
 
-from werkzeug.utils import secure_filename
+
 import numpy as np
 import pickle
 import os
 from flask import Flask,render_template,request,send_file,safe_join,request,abort
 import pickle
-import shutil
+
 import pandas
 import pandas as pd
-from flask_cors import CORS
+
 
 
 
