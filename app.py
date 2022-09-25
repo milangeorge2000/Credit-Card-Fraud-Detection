@@ -33,9 +33,9 @@ def home_one():
 
 
 
-@app.route('/credit.html',methods=['GET'])
+@app.route('/credform.html',methods=['GET'])
 def credit():
-  return render_template('credit.html')
+  return render_template('credform.html')
 
 
 @app.route('/credit_csv.html',methods=['GET'])
