@@ -17,7 +17,6 @@ model = pickle.load(open('rf5.pkl','rb'))
 
 
 app = Flask(__name__)
-CORS(app)
 
 
 @app.route('/', methods=['GET'])
