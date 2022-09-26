@@ -117,7 +117,7 @@ def credit_upload_file():
       
 	      
       # return 'file uploaded successfully'
-      return render_template('credit_csv_download.html')
+      return render_template('credit_csv_result.html',prediction=output)
 
 @app.route('/cpred')
 def find_res():
