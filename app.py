@@ -111,7 +111,7 @@ def credit_upload_file():
    
 
      
-      final.to_csv('credit_result.csv')
+      final.to_csv('cfl.csv')
      
      
       
@@ -119,12 +119,12 @@ def credit_upload_file():
       # return 'file uploaded successfully'
       return render_template('credit_csv_download.html')
 
-@app.route('/credit_csv_result')
-def credit_csv_result():
+@app.route('/cpred')
+def find_res():
    
 
     
-    return send_file('credit_result.csv', as_attachment=True)
+    return send_file('cfl.csv', as_attachment=True)
 
 
 
