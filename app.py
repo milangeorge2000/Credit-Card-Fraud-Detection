@@ -12,7 +12,7 @@ import pandas as pd
 
 
 
-model = pickle.load(open('rf5.pkl','rb'))
+# model = pickle.load(open('rf5.pkl','rb'))
 
 
 
